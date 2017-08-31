@@ -2,19 +2,25 @@
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-left" href="/">Title</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-left" href="/">Title</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Log in</a></li>
-        <li><%= link_to 'Sign up', signup_path %></li>
-      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li><a href="#">Search</a></li>
+            <li><%= link_to 'My page', user_path(current_user) %></li>
+            <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Log in', login_path %></li>
+            <li><%= link_to 'Sign up', signup_path %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </nav>

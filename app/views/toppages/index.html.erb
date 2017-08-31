@@ -3,7 +3,11 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>Title</h1>
-        <p><a href="">Log in</a>　or　<a href="">Sign up</a></p>
+        <% if logged_in? %>
+          <p>Search　My page　Log out</p>
+        <% else %>
+          <p><%= link_to 'Log in', login_path %>　or　<%= link_to 'Sign up', signup_path %></p>
+        <% end %>
       </div>
     </div>
   </div>
