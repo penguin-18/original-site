@@ -1,0 +1,20 @@
+<% if restaurants %>
+  <div class="row">
+    <% restaurants.each do |restaurant| %>
+      <div class="restaurant">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <img src="<%= restaurant.image_url %>" alt="" >
+            </div>
+            <div class="panel-body">
+              <p class="restaurant-title"><%= restaurant.name %></p>
+              <p><%= restaurant.station %></p>
+              <p><%= restaurant.category %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-            <li><a href="#">Search</a></li>
+            <li><%= link_to 'Search', new_restaurant_path %></li>
             <li><%= link_to 'My page', user_path(current_user) %></li>
             <li><%= link_to 'Log out', logout_path, method: :delete %></li>
           <% else %>
