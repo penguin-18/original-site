@@ -1,0 +1,2 @@
+class Went < Visit
+end

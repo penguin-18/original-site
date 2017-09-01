@@ -1,0 +1,13 @@
+<% if current_user.want_to_go?(restaurant) %>
+  <%= form_tag(visit_path(restaurant.code), method: :delete) do %>
+    <%= hidden_field_tag :code, restaurant.code %>
+    <%= hidden_field_tag :type, 'WantToGo' %>
+    <%= submit_tag 'Want to go', class: 'btn btn-success' %>
+  <% end %>
+<% else %>
+  <%= form_tag(visits_path) do %>
+    <%= hidden_field_tag :code, restaurant.code %>
+    <%= hidden_field_tag :type, 'WantToGo' %>
+    <%= submit_tag 'Want to go', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>

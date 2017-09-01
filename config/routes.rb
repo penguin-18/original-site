@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   
   resources :restaurants, only: [:new]
+  resources :visits, only: [:create, :destroy]
 end

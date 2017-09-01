@@ -1,0 +1,2 @@
+class WantToGo < Visit
+end

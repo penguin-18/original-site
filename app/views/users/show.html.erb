@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="user-profile">
+  <div class="status text-center">
+    <ul>
+      <li>
+        <div class="status-label">WANT</div>
+      </li>
+      <li>
+        <div class="status-label">HAVE</div>
+      </li>
+    </ul>
+  </div>
+</div>
+<%= render 'restaurants/restaurants', restaurants: @restaurants %>

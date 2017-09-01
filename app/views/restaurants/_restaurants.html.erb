@@ -11,6 +11,12 @@
               <p class="restaurant-title"><%= restaurant.name %></p>
               <p><%= restaurant.station %></p>
               <p><%= restaurant.category %></p>
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                  <%= render 'visits/want_to_go_button', restaurant: restaurant %>
+                  <%= render 'visits/went_button', restaurant: restaurant %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

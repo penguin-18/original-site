@@ -10,38 +10,20 @@ class RestaurantsController < ApplicationController
     
     @keyword = params[:keyword]
     if @keyword
-      params = URI.encode_www_form({
+      api_params = URI.encode_www_form({
         keyid: ENV['GNAVI_API_KEY_ID'],
         format: 'json',
         hit_per_page: 30,
         freeword: @keyword
       })
-      uri = URI.parse("https://api.gnavi.co.jp/RestSearchAPI/20150630/?#{params}")
+      uri = URI.parse("https://api.gnavi.co.jp/RestSearchAPI/20150630/?#{api_params}")
       json = Net::HTTP.get(uri)
       results = JSON.parse(json)
       
-      results['rest'].each_with_index do |result|
-        restaurant = Restaurant.new(read(result))
+      results['rest'].each do |result|
+        restaurant = Restaurant.find_or_initialize_by(read(result))
         @restaurants << restaurant
       end
     end
-  end
-  
-  private
-  
-  def read(result)
-    name = result['name']
-    url = result['url']
-    image_url = result['image_url']['shop_image1']
-    station = result['access']['station']
-    category = result['category']
-    
-    return {
-      name: name,
-      url: url,
-      image_url: image_url,
-      station: station,
-      category: category
-    }
   end
 end
