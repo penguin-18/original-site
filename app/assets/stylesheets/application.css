@@ -1,15 +1,368 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@charset "utf-8";
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: normal;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding-top: 100px;
+  color: #111;
+  font-size: 13px;
+  font-family: "Helvetica Neue", "Helvetica", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, "Arial", sans-serif;
+  -webkit-animation: fade-in 1s ease 0s 1 normal;
+          animation: fade-in 1s ease 0s 1 normal;
+}
+
+/*.wrapper{*/
+/*  height: 100%;*/
+/*  overflow: scroll;*/
+/*  -webkit-overflow-scrolling: touch;*/
+/*}*/
+
+@-webkit-keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes fade-in {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
+.container {
+  min-height: calc(100% - 50px);
+}
+
+a,
+.navbar-default .navbar-nav li a {
+  color: #111;
+  text-decoration: none;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+
+a:hover,
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-brand:hover{
+    color: #999;
+    text-decoration: none;
+}
+
+a:focus, 
+.navbar-default .navbar-nav li a:focus {
+  color: #999;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-weight: normal;
+}
+
+.btn {
+  border: solid 1.5px #333;
+  border-radius: 0;
+  background: #fff;
+  font-size: 14px;
+  font-family: "Josefin Sans";
+}
+
+input {
+  outline: none !important;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+
+/*navbar*/
+
+.navbar-default {
+  color: #111;
+  background: rgba(255, 255, 255, .9);
+  border: none;
+  font-size: 18px;
+  font-family: "Josefin Sans";
+}
+
+.navbar-default .navbar-brand {
+  height: 70px;
+  padding: 20px 15px;
+  color: #111;
+  font-size: 27px;
+  line-height: 30px;
+}
+
+.navbar-nav li a {
+  padding: 20px 15px;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-brand {
+    height: 60px;
+    padding: 17px 15px;
+    font-size: 25px;
+    line-height: 26px;
+  }
+  
+  .navbar-nav li a {
+    padding: 15px 15px;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+
+.navbar-toggle {
+  border: none;
+  margin: 13px 15px;
+}
+
+.navbar-collapse {
+  border: none;
+  margin-bottom: 5px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  height: 1.5px;
+  background: #111;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background: transparent;
+}
+
+
+/*toppage*/
+
+.cover {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: calc(100% + 100px);
+  background: url("/images/cover3.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: -100px;
+}
+
+.cover-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  font-family: "Josefin Sans";
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 17px;
+}
+
+.top-menu {
+  padding: 0;
+}
+
+.top-menu-item {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 23px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  .top-menu-item {
+    margin: 0 10px;
+    font-size: 18px;
+  }
+}
+
+
+/*signup login*/
+
+.panel-default {
+  /*margin-top: 30px;*/
+  margin-bottom: 50px;
+  /*padding: 20px 30px 28px;*/
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.panel-default .panel-heading {
+  border-bottom: none;
+  background: transparent;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Josefin Sans";
+}
+
+.form-control {
+  margin-bottom: 30px;
+  border: solid 1px #dfdfdf;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+@media (max-width: 767px) {
+  .form-control {
+    margin-bottom: 20px;
+  }
+}
+
+label {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Josefin Sans";
+}
+
+.btn-block {
+  margin-top: 45px;
+}
+
+@media (max-width: 767px) {
+  .btn-block {
+    margin-top: 38px;
+  }
+}
+
+
+/*一覧*/
+
+.restaurant .panel-default {
+  height: 400px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+  .restaurant .panel-default {
+    height: auto;
+  }
+}
+
+.restaurant .panel-default .panel-heading {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.restaurant .panel-body {
+  text-align: center;
+}
+
+.restaurant img {
+  max-height: 240px;
+  max-width: 100%;
+}
+
+.restaurant .btn {
+  width: 85px;
+  margin: 15px 4px 0 4px;
+  padding: 6px 0;
+  font-size: 13px;
+}
+.restaurant .btn:first-child {
+  margin-left: 0;
+}
+
+.restaurant .btn:last-child {
+  margin-right: 0;
+}
+
+.btn-unwant_to_go {
+  background: #ff627a;
+  color: #fff;
+}
+
+.btn-unwant_to_go:hover {
+  color: #fff;
+}
+
+.btn-unwent {
+  background: #60e5c3;
+}
+
+.buttons form {
+  display: inline-block;
+}
+
+.user-menu {
+  padding: 0;
+  text-align: center;
+}
+
+.user-menu li {
+  display: inline-block;
+  list-style: none;
+  padding: 0px 15px 50px;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  .user-menu li {
+    padding: 5px 10px 30px;
+    font-size: 16px;
+  }
+}
+
+.user-menu .current a {
+  color: #999;
+}
+
+.no-results-found {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Josefin Sans";
+}
+
+
+/*search*/
+
+#keyword {
+  margin-bottom: 65px;
+  border: none;
+  border-bottom: solid 1.5px #111;
+  font-family: "Josefin Sans";
+}
+
+
+/*footer*/
+
+footer {
+  height: 50px;
+  padding: 10px 0;
+  font-size: 10px;
+  background: transparent;
+}
+
+footer .fixed {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0;
+}

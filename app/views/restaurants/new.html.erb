@@ -1,11 +1,11 @@
 <div class="search">
   <div class="row">
-    <div class="text-center">
+    <div class="col-xs-offset-1 col-xs-10 text-center">
       <%= form_tag(new_restaurant_path, method: :get, class: 'form-inline') do %>
         <div class="form-group">
-          <%= text_field_tag :keyword, @keyword, class: 'form-control input-lg', size: 40 %>
+          <%= text_field_tag :keyword, @keyword, class: 'form-control input-lg', placeholder: "Search…" , size: 40 %>
         </div>
-        <%= submit_tag 'Search', class: 'btn btn-success' %>
+        <%# submit_tag 'Search', class: 'btn' %>
       <% end %>
     </div>
   </div>

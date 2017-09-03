@@ -1,5 +1,11 @@
-<footer>
-  <div class="text-center text-muted">
+<footer class="text-center text-muted">
+  <div class=
+  <% if current_page?(controller: 'toppages', action: 'index') || current_page?(controller: 'sessions', action: 'new')%>
+    "fixed"
+  <% else %>
+    "static"
+  <% end %>
+  >
     <p>© 2017 Miho Otsuka All Rights Reserved.</p>
     <p>Supported by <a href="http://api.gnavi.co.jp/api/scope/" target="_blank">ぐるなびWebService</a></p>
   </div>

@@ -31,7 +31,7 @@ class User < ApplicationRecord
   end
   
   def unwent(restaurant)
-    went = self.want_to_gos.find_by(restaurant_id: restaurant.id)
+    went = self.wents.find_by(restaurant_id: restaurant.id)
     went.destroy if went
   end
   

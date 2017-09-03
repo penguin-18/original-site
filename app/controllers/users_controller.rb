@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show]
+  before_action :require_user_logged_in, only: [:show, :want_to_gos, :wents]
   
   def show
     @user = User.find(params[:id])
@@ -17,6 +17,16 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def want_to_gos
+    @user = User.find(params[:id])
+    @restaurants = @user.want_to_go_restaurants
+  end
+  
+  def wents
+    @user = User.find(params[:id])
+    @restaurants = @user.went_restaurants
   end
   
   private

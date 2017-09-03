@@ -20,8 +20,15 @@ class RestaurantsController < ApplicationController
       json = Net::HTTP.get(uri)
       results = JSON.parse(json)
       
-      results['rest'].each do |result|
-        restaurant = Restaurant.find_or_initialize_by(read(result))
+      @count =  results['total_hit_count'].to_i
+      
+      if results['total_hit_count'].to_i > 1
+        results['rest'].each do |result|
+          restaurant = Restaurant.find_or_initialize_by(read(result))
+          @restaurants << restaurant
+        end
+      elsif results['total_hit_count'].to_i == 1
+        restaurant = Restaurant.find_or_initialize_by(read(results['rest']))
         @restaurants << restaurant
       end
     end

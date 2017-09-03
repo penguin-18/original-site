@@ -15,9 +15,15 @@ class ApplicationController < ActionController::Base
     code = result['id']
     name = result['name']
     url = result['url']
-    image_url = result['image_url']['shop_image1']
+    result['url']
     station = result['access']['station']
     category = result['category']
+    
+    if result['image_url']['shop_image1'].blank?
+      image_url = '/images/noimage.jpg'
+    else
+      image_url = result['image_url']['shop_image1']
+    end
     
     return {
       code: code,
