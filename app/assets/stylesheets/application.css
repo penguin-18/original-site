@@ -20,12 +20,6 @@ body {
           animation: fade-in 1s ease 0s 1 normal;
 }
 
-/*.wrapper{*/
-/*  height: 100%;*/
-/*  overflow: scroll;*/
-/*  -webkit-overflow-scrolling: touch;*/
-/*}*/
-
 @-webkit-keyframes fade-in {
     0% {opacity: 0}
     100% {opacity: 1}
@@ -80,12 +74,18 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Josefin Sans";
 }
 
-input {
-  outline: none !important;
+.form-control {
+  margin-bottom: 30px;
+  border: solid 1px #dfdfdf;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
 }
 
-input:focus {
-  outline: none !important;
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
 }
 
 
@@ -203,16 +203,14 @@ h1 {
 
 /*signup login*/
 
-.panel-default {
-  /*margin-top: 30px;*/
+.user .panel-default {
   margin-bottom: 50px;
-  /*padding: 20px 30px 28px;*/
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
 
-.panel-default .panel-heading {
+.user .panel-default .panel-heading {
   border-bottom: none;
   background: transparent;
   text-align: center;
@@ -221,18 +219,14 @@ h1 {
   font-family: "Josefin Sans";
 }
 
-.form-control {
-  margin-bottom: 30px;
-  border: solid 1px #dfdfdf;
-  border-radius: 0;
-  box-shadow: none;
-  -webkit-appearance: none;
-}
-
 @media (max-width: 767px) {
-  .form-control {
+  .user .form-control {
     margin-bottom: 20px;
   }
+}
+
+.user .form-control:focus {
+  border: solid 1px #dfdfdf;
 }
 
 label {
@@ -241,12 +235,12 @@ label {
   font-family: "Josefin Sans";
 }
 
-.btn-block {
+.user .btn-block {
   margin-top: 45px;
 }
 
 @media (max-width: 767px) {
-  .btn-block {
+  .user .btn-block {
     margin-top: 38px;
   }
 }
