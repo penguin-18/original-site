@@ -74,6 +74,18 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Josefin Sans";
 }
 
+.btn.active, .btn:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: none; 
+  outline-offset: 0;
+}
+
 .form-control {
   margin-bottom: 30px;
   border: solid 1px #dfdfdf;
@@ -86,6 +98,14 @@ h1, h2, h3, h4, h5, h6, p {
   outline: none;
   box-shadow: none;
   border: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: #fff !important;
+  background-image: none;
+  color: #111;
 }
 
 
@@ -251,6 +271,9 @@ label {
 .restaurant .panel-default {
   height: 400px;
   margin-bottom: 60px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 @media (max-width: 767px) {
@@ -262,6 +285,9 @@ label {
 .restaurant .panel-default .panel-heading {
   margin-bottom: 0;
   padding: 0;
+  background: #fff;
+  border-bottom: none;
+  text-align: center;
 }
 
 .restaurant .panel-body {
