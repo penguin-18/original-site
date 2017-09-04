@@ -1,20 +1,22 @@
 <div class="row">
   <div class="user">
-    <div class="col-sm-offset-3 col-sm-6">
+    <div class="col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">Log in</div>
+        
         <div class="panel-body">
           <%= form_for(:session, url: login_path) do |f| %>
+          
             <div class="form-group">
               <%= f.label :email, 'E-mail' %>
               <%= f.email_field :email, class: 'form-control' %>
             </div>
-  
+            
             <div class="form-group">
               <%= f.label :password, 'Password' %>
               <%= f.password_field :password, class: 'form-control' %>
             </div>
-  
+            
             <%= f.submit 'Log in', class: 'btn btn-block' %>
           <% end %>
         </div>

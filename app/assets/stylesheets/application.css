@@ -6,6 +6,9 @@
   font-weight: normal;
 }
 
+
+/*common*/
+
 html {
   height: 100%;
 }
@@ -21,13 +24,13 @@ body {
 }
 
 @-webkit-keyframes fade-in {
-    0% {opacity: 0}
-    100% {opacity: 1}
+  0% {opacity: 0}
+  100% {opacity: 1}
 }
 
 @keyframes fade-in {
-    0% {opacity: 0}
-    100% {opacity: 1}
+  0% {opacity: 0}
+  100% {opacity: 1}
 }
 
 @media (max-width: 767px) {
@@ -50,11 +53,7 @@ a,
 
 a:hover,
 .navbar-default .navbar-nav li a:hover,
-.navbar-default .navbar-brand:hover{
-    color: #999;
-    text-decoration: none;
-}
-
+.navbar-default .navbar-brand:hover,
 a:focus, 
 .navbar-default .navbar-nav li a:focus {
   color: #999;
@@ -74,14 +73,20 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "Josefin Sans";
 }
 
-.btn.active, .btn:active {
+.btn.active,
+.btn:active {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:focus,
+.btn:active.focus,
+.btn:active:focus {
   outline: none; 
   outline-offset: 0;
 }
@@ -96,16 +101,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .form-control:focus {
   outline: none;
-  box-shadow: none;
   border: none;
+  box-shadow: none;
 }
 
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-  background-color: #fff !important;
-  background-image: none;
-  color: #111;
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 
 
@@ -176,10 +177,10 @@ select:-webkit-autofill {
   top: 0;
   width: 100%;
   height: calc(100% + 100px);
+  margin-top: -100px;
   background: url("/images/cover3.jpg") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin-top: -100px;
 }
 
 .cover-inner {
@@ -187,10 +188,10 @@ select:-webkit-autofill {
   top: 50%;
   left: 50%;
   width: 100%;
-  font-family: "Josefin Sans";
   transform: translateY(-50%);
   transform: translateX(-50%);
   text-align: center;
+  font-family: "Josefin Sans";
 }
 
 h1 {
@@ -210,8 +211,8 @@ h1 {
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 32px;
     margin-bottom: 12px;
+    font-size: 32px;
   }
   
   .top-menu-item {
@@ -266,7 +267,7 @@ label {
 }
 
 
-/*一覧*/
+/*list*/
 
 .restaurant .panel-default {
   height: 400px;
@@ -305,6 +306,7 @@ label {
   padding: 6px 0;
   font-size: 13px;
 }
+
 .restaurant .btn:first-child {
   margin-left: 0;
 }
@@ -330,6 +332,15 @@ label {
   display: inline-block;
 }
 
+.no-results-found {
+  text-align: center;
+  font-size: 16px;
+  font-family: "Josefin Sans";
+}
+
+
+/*my list menu*/
+
 .user-menu {
   padding: 0;
   text-align: center;
@@ -354,12 +365,6 @@ label {
   color: #999;
 }
 
-.no-results-found {
-  text-align: center;
-  font-size: 16px;
-  font-family: "Josefin Sans";
-}
-
 
 /*search*/
 
@@ -367,6 +372,7 @@ label {
   margin-bottom: 65px;
   border: none;
   border-bottom: solid 1.5px #111;
+  color: #111;
   font-family: "Josefin Sans";
 }
 
@@ -382,7 +388,7 @@ footer {
 
 footer .fixed {
   position: fixed;
-  width: 100%;
   bottom: 0;
+  width: 100%;
   padding: 10px 0;
 }
