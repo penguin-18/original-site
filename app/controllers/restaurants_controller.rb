@@ -21,9 +21,11 @@ class RestaurantsController < ApplicationController
 
       @count =  results['total_hit_count'].to_i
 
-      results['rest'].each do |result|
-        restaurant = Restaurant.find_or_initialize_by(read(result))
-        @restaurants << restaurant
+      if @count >= 1
+        results['rest'].each do |result|
+          restaurant = Restaurant.find_or_initialize_by(read(result))
+          @restaurants << restaurant
+        end
       end
     end
   end
